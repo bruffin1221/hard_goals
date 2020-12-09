@@ -5,7 +5,8 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+use RequiredsController
+
+use HeartfeltsController
 use DifficultsController
-use RequiredActionsController
-use HardsController
 use AnimatesController
