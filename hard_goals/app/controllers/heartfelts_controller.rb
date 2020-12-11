@@ -13,11 +13,14 @@ class HeartfeltsController < ApplicationController
 
   # POST: /heartfelts
   post "/heartfelts" do
+    @heartfelts=Heartfelt.find_or_create_by(name: params[:heartfelt][:name], description: params[:heartfelt][:description], 
+    enjoyments: params[:heartfelt][:enjoyments], benefits: params[:heartfelt][:benefits], rewards: params[:heartfelt][:rewards]) 
     redirect "/heartfelts"
   end
 
   # GET: /heartfelts/5
   get "/heartfelts/:id" do
+    @heartfelt=Heartfelt.find_by_id(params[:id])
     erb :"/heartfelts/show.html"
   end
 
@@ -36,3 +39,5 @@ class HeartfeltsController < ApplicationController
     redirect "/heartfelts"
   end
 end
+
+params={"heartfelt"=>{"name"=>"wwww", "description"=>"eenenene", "enjoyments"=>"emememe", "benefits"=>"ememe", "rewards"=>"emememe"}}
