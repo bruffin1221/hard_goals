@@ -2,7 +2,7 @@ class HeartfeltsController < ApplicationController
 
   # GET: /heartfelts
   get "/heartfelts" do
-    @heartfelt=Heart.all
+    @heartfelts=Heartfelt.all
     erb :"/heartfelts/index.html"
   end
 
