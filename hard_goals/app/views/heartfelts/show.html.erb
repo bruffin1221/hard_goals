@@ -1,15 +1,30 @@
-<h1><%= @heartfelt.name %></h1>
-<h4><%= @heartfelt.description%></h4>
+<h1><%= @heartfelts.name %></h1>
+<h4><%= @heartfelts.description%></h4>
 <br>
 
 <h4>Why will I enjoy this activity?</h4>
-<p><%= @heartfelt.enjoyments %><p>
+<p><%= @heartfelts.enjoyments %><p>
 
 <h4>What are my expected results?</h4>
-<p><%= @heartfelt.benefits %></p>
+<p><%= @heartfelts.benefits %></p>
 
 <h4>What kinds of rewards will recieve?</h4>
-<p><%= @heartfelt.rewards %></p>
+<p><%= @heartfelts.rewards %></p>
+
+<h4>Do you wish to go deeper?</h4>
+<a href="/animates/new">Go Deeper</a>
+<br>
+<br>
+
+<h4>Do you wish to delete this goal?</h4>
+<a href="/heartfelts/<%= @heartfelts.id %>/edit">Edit Here</a><br>
+<br>
+<h4>Do you want to change this goals?</h4>
+<form action="/heartfelts/<%= @heartfelts.id %>" method="POST">
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit"  id="submit " value="Delete">
+</form>
+
 
 
 

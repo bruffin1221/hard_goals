@@ -1,1 +1,17 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit <%=@heartfelts.name%></h1>
+<br>
+<br>
+<form method="POST" action="/heartfelts/<%= @heartfelts.id %>">
+  <label>Name:</label><br>
+  <input type="text" name="name" value="<%= @heartfelts.name %>"><br><br>
+  <label>Description:</label><br>
+  <input type="text" name="description" value="<%= @heartfelts.description %>"><br><br>
+  <label>Enjoyments:</label><br>
+  <input type="text" name="enjoyments" value="<%= @heartfelts.enjoyments %>"><br>
+  <label>Benefits:</label><br>
+  <input type="text" name="benefits" value="<%= @heartfelts.benefits %>"><br>
+  <label>Rewards:</label><br>
+  <input type="text" name="rewards" value="<%= @heartfelts.rewards %>"><br>
+  <input type="hidden" name="_method" value="patch">
+  <input type="submit" value="Edit Changes">
+  </form>

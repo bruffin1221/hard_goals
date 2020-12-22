@@ -1,1 +1,42 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>Vision for <%= @animate.heartfelt.name %></h1>
+<br>
+<h4><%=@animate.name%></h4>
+<br>
+<h4>Description</h4>
+<br>
+<%= @animate.description %>
+<br>
+<br>
+<h4> What is the size of your vision?</h4>
+<br>
+<p><%= @animate.size %></p>
+<br>
+<h4> What colors do you see in your business?</h4>
+<br>
+<%= @animate.color %>
+<br>
+<br>
+<h4>How will you feel while working on goal and seeing it come together?</h4>
+<br>
+<%= @animate.emotion %>
+<br> 
+<br>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
+<h4>How much time do you plan on working the goal? Who will be involved? Where will you be?</h4>
+<br>
+<%= @animate.setting %>
+<br>
+<br>
+<h4>What will you be doing to accomplish your goal and what will do after you accomplish?</h4>
+<br>
+<%= @animate.movement %>
+<br>
+<br>
+<h4>What changes in habits and schedule would you to make to acomplish this goal?</h4>
+<br>
+<%= @animate.distinct_parts %>
+<br>
+<br>
+<form action="/animates/<%= @animate.id %>" method="POST">
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit"  id="submit " value="Delete">
+</form>

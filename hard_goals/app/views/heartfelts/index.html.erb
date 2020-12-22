@@ -1,8 +1,14 @@
 <h1>Heartfelt: What excites you?</h1>
 <br>
-<br>
+<h4>Intro</h4>
+<p>Create a shorts of items that really excite you. Let your imagination go wild. It could be traveling 
+the world or going after that dream job. As you create the list, pick what excites you the most and 
+begin defining it.</p>
 <% @heartfelts.each do |heart| %>
-    Name: <%= heart.name %><br>
+    Name:<a href="/heartfelts/<%=heart.id%>"><%= heart.name %></a>
+<br>
     Description: <%= heart.description %><br><br>
     <% end %>
+
+
     

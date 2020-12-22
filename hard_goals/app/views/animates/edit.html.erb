@@ -1,1 +1,48 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Vision for <%=@animate.heartfelt.name%></h1>
+<br>
+<br>
+<form action="/animates/<%= @animate.id %>" method="Post">
+
+<h4><label>Name-Be specific(Do not focus on numbers but think about the benefits)</label></h4>
+<br>
+<textarea name="name" rows="3" cols="100"><%=@animate.name%></textArea>
+<br>
+<br>
+<h4><label>Description-Add Details(Give specific details about the goals)</label></h4>
+<br>
+<textarea name="description" rows="5" cols="100"><%= @animate.description %></textarea>
+<br>
+<br>
+<h4><label>How big or small is this goal? Are you looking at fitting into those new jeans or running an ultramarathon?</label></h4>
+<br>
+<textarea name="size" rows="3" cols="100"><%= @animate.size %></textarea>
+<br>
+<br>
+<h4><label>What does the image look like? What are colors? What is the background?</label></h4>
+<br>
+<textarea name="color" rows="3" cols="100"><%= @animate.color %></textarea>
+<br>
+<br>
+<h4><label>How will you feel while working on and accomplishing this goal? Will you feel happy, relieved, or excited?</label></h4>
+<br>
+<textarea name="emotion" rows="3" cols="100"><%= @animate.emotion %></textarea>
+<br>
+<br>
+<h4><label>Where will you be while working on the goal? Who will be involved? When will you work on or complete the goal?</label></h4>
+<br>
+<textarea name="setting" rows="3" cols="100"><%=  @animate.setting %></textarea>
+<br>
+<br>
+<h4><label>What are the needed action for this goal? What will you do after you accomplish it?</label></h4>
+<br>
+<textarea name="movement" rows="3" cols="100"><%= @animate.movement%></textarea>
+<br>
+<br>
+<h4><label>What changes are needed to accomplish the goal(habits, mindset, scheule) How will you change after accomplishing the goal?</label></h4>
+<br>
+<textarea name="distinct_parts" rows="3" cols="100"><%= @animate.distinct_parts %></textarea>
+<br>
+<br>
+<input type="hidden" name="_method" value="patch">
+<input type="submit" value="Edit Your Vision">
+</form>
