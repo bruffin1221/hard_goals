@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201209225039) do
+ActiveRecord::Schema.define(version: 20201222172946) do
 
   create_table "animates", force: :cascade do |t|
     t.string   "name"
@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(version: 20201209225039) do
     t.text     "description"
     t.date     "deadline"
     t.integer  "heartfelt_id"
-    t.integer  "animate_idS"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "animate_id"
   end
 
 end

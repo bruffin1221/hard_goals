@@ -2,11 +2,13 @@ class RequiredsController < ApplicationController
 
   # GET: /requireds
   get "/requireds" do
+    @required_actions= Required.all
     erb :"/requireds/index.html"
   end
 
   # GET: /requireds/new
   get "/requireds/new" do
+    @animates= Animate.all
     erb :"/requireds/new.html"
   end
 

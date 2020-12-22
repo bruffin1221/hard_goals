@@ -1,4 +1,39 @@
+<h1>Required Actions:Give Life to Our Vision</h4>
+<br>
+<br>
+<h4>Introduction</h4>
+<br>
+<p>With a clear mental picture we can not must give our goals some life with a set of action steps or required_actions.
+For instance, you want to start a new career. The require actions maybe developing the relevant skills, 
+networking with people, and finding a job. Perhaps, you want to own a home. Now, you can think about how 
+to get the house. It could be improving your credit, saving money, and hiring a real estate agent. Now, 
+you want action steps for your goals.</p>
 
+<h4>Pick a Vision</h4>
+<form action="/requireds" method="Post">
+<% @animates.each do |animate| %>
+  <br><label><%= animate.name %></label>
+   <input type="checkbox" name="animate[animate_ids][]" value="<%= animate.name %>"><br>
+ <% end %>
+<br>
+
+<h4><label>What is an action step for your goal?</h4>
+<br>
+<textarea name="name" rows="1" cols="100"></textArea>
+<br>
+<br>
+<h4><label>Describe what the action will require</label></h4>
+<br>
+<textarea name="description" rows="3" cols="100"></textArea>
+<br>
+<br>
+<h4><label>Set a deadline for when you want to complete the step</label></h4>
+<br>
+<textarea name="deadline" rows="1" cols="100"></textArea>
+<br>
+<br>
+<input type="submit" value="Create Action Step">
+</form>
 
 
 

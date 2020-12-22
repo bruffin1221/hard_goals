@@ -36,7 +36,18 @@
 <%= @animate.distinct_parts %>
 <br>
 <br>
+<h4>Do you want to make some changes or update your vision?</h4>
+<br>
+<a href="/animates/<%= @animate.id %>/edit">Edit Here</a>
+<br>
+<br>
+<h4>Do you wish to delete your vision?</h4>
+<br>
 <form action="/animates/<%= @animate.id %>" method="POST">
 <input type="hidden" name="_method" value="DELETE">
 <input type="submit"  id="submit " value="Delete">
 </form>
+<br>
+<br>
+<a href="/animates">Return to Your Vision</a>
+

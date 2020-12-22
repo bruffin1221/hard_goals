@@ -1,6 +1,8 @@
-<h1>Animates</h1>
+<h1>Overall Vision</h1>
 <br>
 <% @animates.each do |animate| %>
-   Name: <%= animate.name %><br>
-   Goal: <%= animate.heartfelt.name %><br><br>
+   Name: <a href="/animates/<%=animate.id%>"><%= animate.name %></a>
+   <br>
+   Goal: <%= animate.heartfelt.name %><br>
+   <br>
     <% end %>
