@@ -13,7 +13,7 @@ you want action steps for your goals.</p>
 <form action="/requireds" method="Post">
 <% @animates.each do |animate| %>
   <br><label><%= animate.name %></label>
-   <input type="checkbox" name="animate[animate_ids][]" value="<%= animate.name %>"><br>
+   <input type="checkbox" name="animate[animate_ids][]" value="<%= animate.id %>"><br>
  <% end %>
 <br>
 

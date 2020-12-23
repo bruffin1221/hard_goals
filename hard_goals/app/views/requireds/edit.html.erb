@@ -1,1 +1,21 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit <%= @required.name %></h1>
+
+<form action="/requireds/<%= @required.id %>" method="Post">
+<h4><label>What is an action step for your goal?</h4>
+<br>
+<textarea name="name" rows="1" cols="100"><%= @required.name%></textArea>
+<br>
+<br>
+<h4><label>Describe what the action will require</label></h4>
+<br>
+<textarea name="description" rows="3" cols="100"><%= @required.description %></textArea>
+<br>
+<br>
+<h4><label>Set a deadline for when you want to complete the step</label></h4>
+<br>
+<textarea name="deadline" rows="1" cols="100"><%= @required.deadline %></textArea>
+<br>
+<br>
+<input type="hidden" name="_method" value="patch">
+<input type="submit" value="Edit Action Step">
+</form>

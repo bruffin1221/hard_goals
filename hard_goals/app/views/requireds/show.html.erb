@@ -1,1 +1,11 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h1>Action Step for <%= @require_action.heartfelt.name%></h1>
+<h3><%=@require_action.name%></h3>
+<br>
+<p><%=@require_action.description%></p>
+<p><%=@require_action.deadline%></p>
+
+<form action="/requireds/<%= @require_action.id %>" method="POST">
+<input type="hidden" name="_method" value="DELETE">
+<input type="submit"  id="submit " value="Delete">
+</form>
+

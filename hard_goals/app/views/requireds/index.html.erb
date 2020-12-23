@@ -1,2 +1,12 @@
 <h1>Required Actions</h1>
+<br>
+<br>
+<% @required_actions.each do |require| %>
+    Goal: <%=require.heartfelt.name%>
+    <br>
+    Vision Statement: <%= require.animate.name %>
+    <br>
+    Action Step: <%=require.name %>
+    <% end %>
+    
 
