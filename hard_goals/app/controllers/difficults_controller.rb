@@ -2,17 +2,20 @@ class DifficultsController < ApplicationController
 
   # GET: /difficults
   get "/difficults" do
+    @difficult=Difficult.all
     erb :"/difficults/index.html"
   end
 
   # GET: /difficults/new
   get "/difficults/new" do
+    @required_action=Required.all
     erb :"/difficults/new.html"
   end
 
   # POST: /difficults
   post "/difficults" do
-    redirect "/difficults"
+
+  # redirect "/difficults"
   end
 
   # GET: /difficults/5

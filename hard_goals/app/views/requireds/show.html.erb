@@ -1,9 +1,24 @@
 <h1>Action Step for <%= @require_action.heartfelt.name%></h1>
-<h3><%=@require_action.name%></h3>
+<h4><%= @require_action.animate.name %></h4>
+<br>
+<h4>What is your required action</h4>
+<br>
+<p><%=@require_action.name%></p>
+
+<h4>What exactly to do you need to do for this step?</h4>
 <br>
 <p><%=@require_action.description%></p>
+<h4>When would you like to complete this step?</h4>
+<br>
 <p><%=@require_action.deadline%></p>
 
+<h4>Would you like to update this action?</h4>
+<br>
+<a href="/requireds/<%=@require_action.id%>/edit">Update Action</a>
+<br>
+<br>
+<h4>Do you wish to delete this action?</h4>
+<br>
 <form action="/requireds/<%= @require_action.id %>" method="POST">
 <input type="hidden" name="_method" value="DELETE">
 <input type="submit"  id="submit " value="Delete">

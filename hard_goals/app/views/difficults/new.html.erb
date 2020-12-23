@@ -1,1 +1,45 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h1>Difficult: Building My Habits and Routines</h1>
+
+<h4>Introduction</h4>
+<br>
+<p>We can now develop our habits and routines needed for our goal. Daily routines are the specific 
+strategies, techniques and procedures. Habits are the specific actions for the routines. For example:
+you goal could be better health and fitness. A vision statement maybe running your local marathon. Perhaps,
+an action is improved nutrition. Your routine may include eating a good breakfastand an action is eating 
+a boiled egg and apple for breakfast. Another example could be improving your finances. Part of this 
+vision could be living in a nice home. An action step is improving your credit. Your daily routine could
+include reducing your spending. A habit could be eating out one day a week instead of three. The extra 
+goes toward debt.</p>
+
+<h4>Pick A Required Action</h4>
+<form action="/difficults" method="Post">
+<% @required_action.each do |require| %>
+  <br><label><%= require.name%> by <%= require.deadline%></label>
+   <input type="checkbox" name="require[require_ids][]" value="<%= require.id %>"><br>
+ <% end %>
+<br>
+ <h4> What daily routine is needed for this required action?</h4>
+ <br>
+ <textarea name="name" rows="2" cols="50"></textArea>
+ <br>
+ <br>
+ <h4>Describe what the daily routine will look like.</h4>
+ <br>
+ <textarea name="description" rows="2" cols="50"></textArea>
+ <br>
+ <br>
+ <h4>Put together a set of daily or weekly actions to create a routine</h4>
+ <br>
+ <label>Action One:</label><br>
+ <textarea name="tactic_1" rows="2" cols="50"></textArea>
+ <br>
+ <br>
+ <label>Action Two:</label><br>
+ <textarea name="tactic_2" rows="2" cols="50"></textArea>
+ <br>
+ <br>
+ <label>Action Three:</label><br>
+ <textarea name="tactic_3" rows="2" cols="50"></textArea>
+ <br>
+ <input type="submit" value="Create Routine">
+</form>
