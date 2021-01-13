@@ -10,3 +10,4 @@ use RequiredsController
 use HeartfeltsController
 use DifficultsController
 use AnimatesController
+use UsersController

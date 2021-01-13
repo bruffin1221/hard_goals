@@ -15,13 +15,27 @@
    
   </head>
   <body>
+  <% if !logged_in? %>
   <div class="topnav">
   <a class="active" href="/">Welcome</a>
   <a href="/heartfelts">Heartfelt</a>
   <a href="/animates">Animated</a>
   <a href="/requireds">Required</a>
   <a href="/difficults">Difficult</a>
+  <a href="/user/signup">Signup</a>
+  <a href="/users/login">Login</a>
   </div>
+  <% else %>
+  <div class="topnav">
+  <a class="active" href="/">Welcome</a>
+  <a href="/heartfelts">Heartfelt</a>
+  <a href="/animates">Animated</a>
+  <a href="/requireds">Required</a>
+  <a href="/difficults">Difficult</a>
+  <a href="/users/logout">Logout</a>
+  </div>
+  <% end %>
+
   <div style="padding-left:16px">
     <div class="wrapper">
 

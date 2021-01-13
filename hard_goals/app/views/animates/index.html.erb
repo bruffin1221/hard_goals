@@ -1,6 +1,18 @@
-<h1>Overall Vision</h1>
+<h1>Animated</h1>
+<br>
+<h4>Get Excited</h4>
+<p>
+Great! You now have a set of goals. We now want to animate or develop a clear mental picture of the goal. It goes 
+beyond deadlines and dates. We give the emotions, colors, and life. This increases motivation and enthusiasm for 
+goals. Click the link below:
+<br>
+<br>
+<a href="/animates/new"> Add Action Steps</a>
+
+
+</p>
 <br>
 <% @animates.each do |animate| %>
-   Name: <a href="/animates/<%=animate.id%>"><%= animate.name %></a>
+   <a href="/animates/<%=animate.id%>"><%= animate.name %></a>
    <br>
     <% end %>

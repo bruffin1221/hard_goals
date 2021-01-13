@@ -1,8 +1,20 @@
 <h1>Required Actions</h1>
+
+<h4>Take Action</4>
+<p>
+Now that you have defined your goals. We want to give our goals life through a set of actions steps. While 
+planning actions, we want to focus on learning, easy victories, and gaining momentum. For instance, you may learn 
+about diet and exercise for weight losss, or pay of small debts for homeownership. The point is take small immediate
+and start gaining momentum. You can start by clicking the link below:
+<br>
+<br>
+<a href="/requireds/new"> Add Action Steps</a>
+</p>
+
 <br>
 <% @required_actions.each do |require| %>
     <br>
-    Action Step: <%=require.name %>
+    <%=require.name %>
     <% end %>
     
 
