@@ -1,9 +1,16 @@
 <h1>Heartfelt: What excites you?</h1>
 <br>
-<h4>Intro</h4>
-<p>Create a shorts of items that really excite you. Let your imagination go wild. It could be traveling 
-the world or going after that dream job. As you create the list, pick what excites you the most and 
-begin defining it.</p>
+<h4>Begin Here</h4>
+
+<p>We want to begin by figuring-out what excites you. Do not be boring or dull but set goals that truly excite you.
+It could be traveling the world, starting a new career, or buying a new home. After completing this exercise, pick
+two or three of gials that mot excite and further define them. You can start by clicking the link below:
+<br>
+<br>
+<a href="/heartfelts/new"> Create Your List</a>
+</p>
+
+
 <% @heartfelts.each do |heart| %>
     Name:<a href="/heartfelts/<%=heart.id%>"><%= heart.name %></a>
 <br>

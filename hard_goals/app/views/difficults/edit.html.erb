@@ -1,1 +1,30 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h1>Edit Rountine for <%=@difficult.heartfelt.name%></h1>
+
+<form action="/difficults/<%= @difficult.id %>" method="Post">
+
+<h4> What daily routine is needed for this required action?</h4>
+<br>
+<textarea name="name" rows="2" cols="50"><%=@difficult.name %></textArea>
+<br>
+<br>
+<h4>Describe what the daily routine will look like.</h4>
+<br>
+<textarea name="description" rows="2" cols="50"><%=@difficult.description%></textArea>
+<br>
+<br>
+<h4>Put together a set of daily or weekly actions to create a routine</h4>
+<br>
+<label>Action One:</label><br>
+<textarea name="tactic_1" rows="2" cols="50"><%=@difficult.tactic_1%></textArea>
+<br>
+<br>
+<label>Action Two:</label><br>
+<textarea name="tactic_2" rows="2" cols="50"><%=@difficult.tactic_2%></textArea>
+<br>
+<br>
+<label>Action Three:</label><br>
+<textarea name="tactic_3" rows="2" cols="50"><%=@difficult.tactic_3%></textArea>
+<br>
+<input type="hidden" name="_method" value="patch">
+<input type="submit" value="Create Routine">
+</form>

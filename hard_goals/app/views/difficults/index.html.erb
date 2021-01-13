@@ -1,1 +1,6 @@
-<h1>Animated Goals</h1>
+<h1>Routines and Daily Actions</h1>
+<br>
+<% @difficults.each do |difficult| %>
+    Routine: <a href="/difficults/<%=difficult.id%>"><%= difficult.name %></a>
+    <br>
+    <%end%>

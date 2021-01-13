@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201222172946) do
+ActiveRecord::Schema.define(version: 20201223202458) do
 
   create_table "animates", force: :cascade do |t|
     t.string   "name"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 20201222172946) do
     t.text     "tactic_3"
     t.integer  "heartfelt_id"
     t.integer  "animate_id"
-    t.integer  "difficult_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.integer  "required_id"
   end
 
   create_table "heartfelts", force: :cascade do |t|
