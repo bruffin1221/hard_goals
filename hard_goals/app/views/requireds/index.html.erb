@@ -1,5 +1,7 @@
 <h1>Required Actions</h1>
-
+<% if flash.has?(:message) %>
+<%= flash[:message] %>
+<% end %>
 <h4>Take Action</4>
 <p>
 Now that you have defined your goals. We want to give our goals life through a set of actions steps. While 

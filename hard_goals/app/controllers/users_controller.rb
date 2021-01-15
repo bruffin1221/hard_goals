@@ -1,27 +1,23 @@
 class UsersController < ApplicationController
   
-  configure do
-    set :views, "app/views"
-     enable :sessions
-     set :session_secret, "password_security"
+  get "/signup" do 
+    if !logged_in?
+      erb :"/users/signup"
+    elsif logged_in?
+      redirect "/heartfelts" 
     end
-
-    get "/signup" do 
-      if !logged_in?
-          erb :'/users/signup'
-      elsif logged_in?
-          redirect "/heartfelts" 
-      end
   end
   
   post "/signup" do 
-    if !params[:username].empty? && !params[:password].empty?
-      user=User.new(username: params[:username], email: params[:email], password: params[:password])
+    if params[:username].empty? || params[:password].empty? 
+      redirect "/signup"
+    elsif User.find_by(username: params[:username])
+      redirect "/signup"
+    elsif !params[:username].empty? && !params[:password].empty? 
+      user=User.new(username: params[:username], password: params[:password])
       user.save
       session[:id]=user.id
-      redirect "/hearfelts"
-    else
-      redirect "/signup"
+      redirect "/heartfelts"
     end
   end
   
@@ -40,9 +36,9 @@ class UsersController < ApplicationController
       session[:id]=@user.id
       redirect "/heartfelts"
       else
-          redirect "/login"
+        redirect "/login"
       end
-  end
+    end
   
   get "/users/:id" do
           @users=User.find_by_id(params[:id])

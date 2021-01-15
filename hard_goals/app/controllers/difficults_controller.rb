@@ -1,9 +1,12 @@
 class DifficultsController < ApplicationController
 
-  # GET: /difficults
   get "/difficults" do
-    @difficults=Difficult.all
-    erb :"/difficults/index.html"
+    if logged_in?
+       @difficults=Difficult.all
+       erb :"/difficults/index.html"
+    elsif
+      redirect "/"
+    end
   end
 
   # GET: /difficults/new
