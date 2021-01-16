@@ -6,11 +6,10 @@ Great! You now have a set of goals. We now want to animate or develop a clear me
 beyond deadlines and dates. We give the emotions, colors, and life. This increases motivation and enthusiasm for 
 goals. Click the link below:
 <br>
-<br>
 <a href="/animates/new"> Create Your Vision</a>
 
 <h4>Goals and Vision</h4>
-</p>
+<br>
 <% @user.animates.each do |animate| %>
    Goal: <a href="/heartfelts/<%=animate.heartfelt_id%>"><%= animate.heartfelt.name %></a><br>
    Vision: <a href="/animates/<%=animate.id%>"><%= animate.name %></a>

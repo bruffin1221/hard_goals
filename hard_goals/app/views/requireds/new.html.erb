@@ -12,7 +12,7 @@ savings.</p>
 
 <h4>Pick a Vision</h4>
 <form action="/requireds" method="Post">
-<% @animates.each do |animate| %>
+<% @animates.animates.each do |animate| %>
   <br><label><%= animate.name %></label>
    <input type="checkbox" name="animate[animate_ids][]" value="<%= animate.id %>"><br>
  <% end %>

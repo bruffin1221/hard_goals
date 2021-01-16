@@ -1,7 +1,7 @@
 <h1><%= @heartfelts.name %></h1>
+<br>
 <h4><%= @heartfelts.description%></h4>
 <br>
-
 <h4>Why will I enjoy this activity?</h4>
 <p><%= @heartfelts.enjoyments %><p>
 
@@ -11,11 +11,15 @@
 <h4>What kinds of rewards will recieve?</h4>
 <p><%= @heartfelts.rewards %></p>
 
-<h4>Do you wish to go deeper?</h4>
-<a href="/animates/new">Go Deeper</a>
-<br>
-<br>
+<h4>Do you have a clear mental picture of your goal?</h4>
+<% @heartfelts.animates.each do |heartfelt|%>
+    <p><%= heartfelt.name %></p>
+    <% end %>
 
+<h4>If not, please create one</h4>
+<a href="/animates/new">Create Mental Picture</a>
+<br>
+<br>
 <h4>Do you wish to update this goal?</h4>
 <a href="/heartfelts/<%= @heartfelts.id %>/edit">Edit Here</a><br>
 <br>

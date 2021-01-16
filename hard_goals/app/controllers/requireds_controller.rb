@@ -2,7 +2,7 @@ class RequiredsController < ApplicationController
 
   get "/requireds" do
     if logged_in?
-      @required_actions= Required.all
+      @required_actions= User.find_by_id(session[:id])
       erb :"/requireds/index.html"
     elsif
       redirect "/"
@@ -11,7 +11,8 @@ class RequiredsController < ApplicationController
 
   get "/requireds/new" do
     if logged_in?
-      @animates= Animate.all
+      #@animates= Animate.all
+      @animates=User.find_by_id(session[:id])
       erb :"/requireds/new.html"
     elsif
       redirect "/"
@@ -24,7 +25,8 @@ class RequiredsController < ApplicationController
       animate_id=animate.first.to_i
       animate_info=Animate.find_by_id(animate_id)
       @required_action=Required.find_or_create_by(name: params[:name], description: params[:description],
-      deadline: params[:deadline], heartfelt_id: animate_info.heartfelt_id, animate_id: animate_info.id)
+      deadline: params[:deadline], heartfelt_id: animate_info.heartfelt_id, 
+      animate_id: animate_info.id, user_id: session[:id])
       redirect "/requireds/#{@required_action.id}"
     elsif !params.has_key?(:animate)
       redirect "/requireds/new"

@@ -9,13 +9,13 @@ about diet and exercise for weight losss, or pay of small debts for homeownershi
 and start gaining momentum. You can start by clicking the link below:
 <br>
 <br>
-<a href="/requireds/new"> Add Action Steps</a>
+<a href="/requireds/new">Add Required Steps</a>
 </p>
-
+<h4>Required Actions</h4>
 <br>
-<% @required_actions.each do |require| %>
-    <br>
-    <%=require.name %>
+<% @required_actions.requireds.each do |require| %>
+    Vision: <a href="/animates/<%=require.animate.id%>"><%=require.animate.name %></a><br>
+    Action Step: <a href="/requireds/<%=require.id%>"><%=require.name %></a> <br>
     <% end %>
     
 

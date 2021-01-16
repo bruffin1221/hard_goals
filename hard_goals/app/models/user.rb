@@ -1,5 +1,4 @@
-class User < ActiveRecord::Base
-    
+class User < ActiveRecord::Base  
     has_many :heartfelts 
     has_many :animates
     has_many :requireds

@@ -13,7 +13,7 @@ goes toward debt.</p>
 
 <h4>Pick A Required Action</h4>
 <form action="/difficults" method="Post">
-<% @required_action.each do |require| %>
+<% @required_action.requireds.each do |require| %>
   <br><label><%= require.name%> by <%= require.deadline%></label>
    <input type="checkbox" name="require[require_ids][]" value="<%= require.id %>"><br>
  <% end %>

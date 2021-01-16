@@ -1,20 +1,18 @@
-<h1><%= @difficult.heartfelt.name%></h1>
+<h1>Routine for <%= @difficult.heartfelt.name%></h1>
 <br>
-<h4><%= @difficult.animate.name%></h4>
-<br>
-<h4><%= @difficult.required.name%></h4>
-<br>
-<h4> What routine do you need to establish for this goal?</h4>
-<br>
+<h4>What is the vision for this goal?</h4>
+<p><%= @difficult.animate.name%></p>
+
+<h4>What is the required action for this goal?</h4>
+<p><%= @difficult.required.name%></p>
+
+<h4> What routine do you want to establish?</h4>
 <p><%= @difficult.name %></p>
 
 <h4>Describe the routine.</h4>
-<br>
 <p><%=@difficult.description%></p>
 
-
 <h4>What are the daily and weekly actions are needed for this goal?</h4>
-<br>
 <label>Action One:</label><br>
 <p><%= @difficult.tactic_1 %></p>
 
@@ -22,16 +20,15 @@
 <p><%= @difficult.tactic_2 %></p>
 
 <label>Action Three:</label><br>
-<p><%= @difficult.tactic_2 %></p>
+<p><%= @difficult.tactic_3 %></p>
 
 <h4>Would you like to update your routine?</h4>
-<br>
 <a href="/difficults/<%= @difficult.id %>/edit">Update here</a><br>
 <br>
-<br>
 <h4>Would you like to delete the routine</h4>
-<br>
 <form action="/difficults/<%= @difficult.id %>" method="POST">
 <input type="hidden" name="_method" value="DELETE">
 <input type="submit"  id="submit " value="Delete">
 </form>
+<br>
+<a href="/difficults">Return to Your Routines and Tasks</a>
