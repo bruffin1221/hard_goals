@@ -1,4 +1,5 @@
-<h1>Heartfelt: What excites you?</h1>
+<h1>Welcome <%=@user.username%></h1>
+<br>
 <br>
 <h4>Begin Here</h4>
 
@@ -9,13 +10,9 @@ two or three of gials that mot excite and further define them. You can start by 
 <br>
 <a href="/heartfelts/new"> Create Your List</a>
 </p>
-
 <h4>Goal List</h4>
-<% @hearts.heartfelts.each do |heart| %>
+<br>
+<% @user.heartfelts.each do |heart| %>
     <a href="/heartfelts/<%=heart.id%>"><%= heart.name %></a><br>
     <%end%>
-    
-  
 
-
-    

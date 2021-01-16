@@ -19,14 +19,14 @@ class RequiredsController < ApplicationController
   end
 
   post "/requireds" do
-    if !params[:animate][:animate_ids].empty && logged_in?
+    if params.has_key?(:animate) && logged_in?
       animate=params[:animate][:animate_ids]
       animate_id=animate.first.to_i
       animate_info=Animate.find_by_id(animate_id)
       @required_action=Required.find_or_create_by(name: params[:name], description: params[:description],
       deadline: params[:deadline], heartfelt_id: animate_info.heartfelt_id, animate_id: animate_info.id)
       redirect "/requireds/#{@required_action.id}"
-    elsif !params[:animate][:animate_ids].empty
+    elsif !params.has_key?(:animate)
       redirect "/requireds/new"
     elsif !logged_in?
       redirect "/"

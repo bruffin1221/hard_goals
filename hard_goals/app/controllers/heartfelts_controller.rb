@@ -1,9 +1,9 @@
 class HeartfeltsController < ApplicationController
    
-  # GET: /heartfelts
+ 
   get "/heartfelts" do
-    if logged_in?
-      @heartfelts=Heartfelt.all
+    if logged_in? 
+      @hearts=User.find_by_id(session[:id])
       erb :"/heartfelts/index.html"
     elsif
       redirect "/"
@@ -22,8 +22,9 @@ class HeartfeltsController < ApplicationController
   # POST: /heartfelts
   post "/heartfelts" do
     if logged_in?
-      @heartfelts=Heartfelt.find_or_create_by(name: params[:name], description: params[:description], enjoyments: params[:enjoyments], benefits: params[:benefits], rewards: params[:rewards]) 
-      redirect "/heartfelts/#{@heartfelts.id}"
+      @heartfelts=Heartfelt.find_or_create_by(name: params[:name], description: params[:description],
+       enjoyments: params[:enjoyments], benefits: params[:benefits], rewards: params[:rewards], user_id: session[:id]) 
+      redirect "/users/#{@heartfelts.user_id}"
     elsif
       redirect "/"
     end
@@ -73,5 +74,8 @@ class HeartfeltsController < ApplicationController
     
 end
 
-   
+ #  Name:<a href="/heartfelts/<%=heart.id%>"><%= heart.name %></a>
+#<br>
+#Description: <%= heart.description %><br><br>
+#<% end %>  
 

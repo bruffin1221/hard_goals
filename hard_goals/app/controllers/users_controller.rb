@@ -14,9 +14,9 @@ class UsersController < ApplicationController
     elsif User.find_by(username: params[:username])
       redirect "/signup"
     elsif !params[:username].empty? && !params[:password].empty? 
-      user=User.new(username: params[:username], password: params[:password])
-      user.save
-      session[:id]=user.id
+      @user=User.new(username: params[:username], password: params[:password])
+      @user.save
+      session[:id]=@user.id
       redirect "/heartfelts"
     end
   end
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   
   post "/login" do
     @user = User.find_by(username: params[:username])
-    if @user=@user.authenticate(params[:password])
+    if @user && @user.authenticate(params[:password])
       session[:id]=@user.id
       redirect "/heartfelts"
       else
@@ -41,7 +41,7 @@ class UsersController < ApplicationController
     end
   
   get "/users/:id" do
-          @users=User.find_by_id(params[:id])
+          @user=User.find_by_id(params[:id])
           erb :'/users/show'
   end 
   

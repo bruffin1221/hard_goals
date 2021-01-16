@@ -7,12 +7,12 @@ beyond deadlines and dates. We give the emotions, colors, and life. This increas
 goals. Click the link below:
 <br>
 <br>
-<a href="/animates/new"> Add Action Steps</a>
+<a href="/animates/new"> Create Your Vision</a>
 
-
+<h4>Goals and Vision</h4>
 </p>
-<br>
-<% @animates.each do |animate| %>
-   <a href="/animates/<%=animate.id%>"><%= animate.name %></a>
+<% @user.animates.each do |animate| %>
+   Goal: <a href="/heartfelts/<%=animate.heartfelt_id%>"><%= animate.heartfelt.name %></a><br>
+   Vision: <a href="/animates/<%=animate.id%>"><%= animate.name %></a>
    <br>
     <% end %>

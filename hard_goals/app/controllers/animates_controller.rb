@@ -3,7 +3,7 @@ class AnimatesController < ApplicationController
 
   get "/animates" do
     if logged_in?
-      @animates=Animate.all
+      @user=User.find_by_id(session[:id])
       erb :"/animates/index.html"
     elsif
       redirect "/"
@@ -12,7 +12,8 @@ class AnimatesController < ApplicationController
 
   get "/animates/new" do
     if logged_in?
-      @heartfelts=Heartfelt.all
+      #@heartfelts=Heartfelt.all
+      @hearts=User.find_by_id(session[:id])
       erb :"/animates/new.html"
     elsif
       redirect "/"
@@ -21,15 +22,15 @@ class AnimatesController < ApplicationController
 
 
   post "/animates" do
-    if !params["heart"]["heart_ids"].empty && logged_in?
-      goal=params["heart"]["heart_ids"]
+    if logged_in? && params.has_key?(:heart)
+      goal=params[:heart][:heart_ids]
       @goal= Heartfelt.find_by(name: goal.first)
       @animate=Animate.find_or_create_by(name: params[:name], description: params[:description], size: params[:size],
       color: params[:color], emotion: params[:emotion], setting: params[:setting], movement: params[:movement],
-      distinct_parts: params[:distinct_parts], heartfelt_id: @goal.id)
+      distinct_parts: params[:distinct_parts], heartfelt_id: @goal.id, user_id: session[:id])
       redirect "/animates/#{@animate.id}"
-    elsif params["heart"]["heart_ids"].empty
-      redirect "/animates/new"
+    elsif !params.has_key?(:heart)
+       redirect "/animates/new"
     elsif !logged_in?
       redirect "/"
     end

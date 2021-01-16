@@ -9,7 +9,7 @@ the SUV or compact car. Make the image detailed, focused, and in-depth as possib
 
 <h4>Pick a Goal</h4>
 <form action="/animates" method="Post">
-<% @heartfelts.each do |heart| %>
+<% @hearts.heartfelts.each do |heart| %>
   <br><label><%= heart.name %></label>
    <input type="checkbox" name="heart[heart_ids][]" value="<%= heart.name %>"><br>
  <% end %>
