@@ -32,11 +32,11 @@ class HeartfeltsController < ApplicationController
 
   # GET: /heartfelts/5/edit
   get "/heartfelts/:id/edit" do
-    if logged_in?
       @heartfelts= Heartfelt.find_by_id(params[:id]) 
-      erb :"/heartfelts/edit.html"
-    elsif 
-      redirect "/"
+      if logged_in? && @heartfelts.user.id==current_user.id 
+        erb :"/heartfelts/edit.html"
+      elsif 
+        redirect "/"
     end
   end
 
@@ -63,10 +63,10 @@ class HeartfeltsController < ApplicationController
 
    # GET: /heartfelts/5
    get "/heartfelts/:id" do
-    if logged_in?
-      @heartfelts=Heartfelt.find_by_id(params[:id])
+    @heartfelts=Heartfelt.find_by_id(params[:id])
+    if logged_in? && @heartfelts.user.id==current_user.id
       erb :"/heartfelts/show.html"
-    elsif
+    else
       redirect "/"
     end
   end
@@ -74,8 +74,6 @@ class HeartfeltsController < ApplicationController
     
 end
 
- #  Name:<a href="/heartfelts/<%=heart.id%>"><%= heart.name %></a>
-#<br>
-#Description: <%= heart.description %><br><br>
-#<% end %>  
+ 
+
 

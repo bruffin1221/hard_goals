@@ -10,9 +10,11 @@ the SUV or compact car. Make the image detailed, focused, and in-depth as possib
 <h4>Pick a Goal</h4>
 <form action="/animates" method="Post">
 <% @hearts.heartfelts.each do |heart| %>
+  <% if heart.animate.nil? %>
   <br><label><%= heart.name %></label>
-   <input type="checkbox" name="heart[heart_ids][]" value="<%= heart.name %>"><br>
- <% end %>
+  <input type="checkbox" name="heart[heart_ids][]" value="<%= heart.name %>"><br>
+  <% end %>
+  <% end %>
 <br>
 
 <h4><label>Name-Be specific(Do not focus on numbers but think about the benefits)</label></h4>
@@ -55,7 +57,7 @@ the SUV or compact car. Make the image detailed, focused, and in-depth as possib
 <textarea name="distinct_parts" rows="3" cols="100"></textarea>
 <br>
 <br>
-<input type="submit" value="Create Goal">
+<input type="submit" value="Create Vision">
 </form>
 
 

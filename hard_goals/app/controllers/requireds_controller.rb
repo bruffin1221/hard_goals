@@ -4,17 +4,16 @@ class RequiredsController < ApplicationController
     if logged_in?
       @required_actions= User.find_by_id(session[:id])
       erb :"/requireds/index.html"
-    elsif
+      else
       redirect "/"
     end
   end
 
   get "/requireds/new" do
     if logged_in?
-      #@animates= Animate.all
       @animates=User.find_by_id(session[:id])
       erb :"/requireds/new.html"
-    elsif
+    else
       redirect "/"
     end
   end
@@ -36,8 +35,8 @@ class RequiredsController < ApplicationController
   end
 
   get "/requireds/:id" do
-    if logged_in?
       @require_action= Required.find_by_id(params[:id])
+      if logged_in? && @require_action.user_id==current_user.id
       erb :"/requireds/show.html"
     elsif 
       redirect "/"
@@ -45,8 +44,8 @@ class RequiredsController < ApplicationController
   end
 
   get "/requireds/:id/edit" do
-    if logged_in?
       @required= Required.find_by_id(params[:id])
+      if logged_in? && @required.user_id==current_user.id
       erb :"/requireds/edit.html"
     elsif
       redirect "/"

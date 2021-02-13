@@ -11,13 +11,8 @@ class AnimatesController < ApplicationController
   end
 
   get "/animates/new" do
-    if logged_in?
-      #@heartfelts=Heartfelt.all
-      @hearts=User.find_by_id(session[:id])
-      erb :"/animates/new.html"
-    elsif
-      redirect "/"
-    end
+    @hearts=User.find_by_id(session[:id])
+    erb :"/animates/new.html"
   end
 
 

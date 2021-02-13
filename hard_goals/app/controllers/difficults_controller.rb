@@ -37,17 +37,17 @@ class DifficultsController < ApplicationController
 
  
   get "/difficults/:id" do
-    if logged_in?
       @difficult=Difficult.find_by_id(params[:id])
-      erb :"/difficults/show.html"
+      if logged_in? && @difficult.user.id==current_user.id
+        erb :"/difficults/show.html"
     elsif
       redirect "/"
     end
   end 
 
   get "/difficults/:id/edit" do
-    if logged_in?
       @difficult=Difficult.find_by_id(params[:id])
+      if logged_in? && @difficult.user_id==current_user.id
       erb :"/difficults/edit.html"
     elsif
       redirect "/"

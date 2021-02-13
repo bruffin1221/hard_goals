@@ -30,7 +30,7 @@
 <br>
 <h4>Does your goal have any required actions</h4>
  <% @animate.requireds.each do |animate|%>
-    <%= animate.name %>
+    <a href="/requireds/<%=animate.id %>"><%=animate.name %></a>
     <% end %>
 <br>
 <br>
